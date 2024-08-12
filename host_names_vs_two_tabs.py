@@ -6,7 +6,7 @@ df_tab1 = pd.read_excel(file_path, sheet_name='Full Base')
 df_tab2 = pd.read_excel(file_path, sheet_name='с ними был колл')
 
 # Your list of words
-word_list = ['Haelo', 'Estadia', 'Luxury', '360', 'Infinity', 'Easy', 'Anora', 'HomeStays', 'Seazone', 'depptö', 'Punta']
+word_list = ['any', 'life']
 
 # Initialize an empty result string
 result = ""
@@ -31,7 +31,7 @@ for word in word_list:
         result += "\n"
 
 # Write the result to a text file
-with open('result.txt', 'w', encoding='utf-8') as txt_file:
+with open('result_hosts.txt', 'w', encoding='utf-8') as txt_file:
     txt_file.write(result)
 
-print("Result saved to result.txt")
+print("Result saved to result_hosts.txt")

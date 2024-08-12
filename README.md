@@ -1,10 +1,11 @@
 This README covers scripts:
 - host_names_vs_two_tabs
+- country_check
 
 
 ---
 
-# host_names_vs_two_tabs
+# host_names_vs_two_tabs script
 
 
 This Python script reads data from an Excel file and searches for specific keywords within two sheets. It identifies and records all matches found in the "Company" and "Company name" columns, then saves the results in a text file.
@@ -13,7 +14,7 @@ This Python script reads data from an Excel file and searches for specific keywo
 
 - **Keyword Matching**: Searches for multiple keywords across two Excel sheets.
 - **Detailed Reporting**: Records all matches found in both sheets, including the associated company names and countries (if applicable).
-- **Text Output**: Saves the results in a `result.txt` file for easy review.
+- **Text Output**: Saves the results in a `result_hosts.txt` file for easy review.
 
 ## Requirements
 
@@ -44,11 +45,11 @@ This Python script reads data from an Excel file and searches for specific keywo
    python company_name_matcher.py
    ```
 
-5. **View Results**: The script will generate a `result.txt` file in the current directory, containing all matches.
+5. **View Results**: The script will generate a `result_hosts.txt` file in the current directory, containing all matches.
 
 ## Example
 
-If the Excel file contains company names like "Haelo International" and "Luxury Stays," and the keyword list includes "Haelo" and "Luxury," the output in `result.txt` might look like:
+If the Excel file contains company names like "Haelo International" and "Luxury Stays," and the keyword list includes "Haelo" and "Luxury," the output in `result_hosts.txt` might look like:
 
 ```
 word Haelo - matches:
@@ -65,3 +66,64 @@ word Luxury - matches:
 - **Adding More Keywords**: Extend the `word_list` in the script to include additional keywords.
 - **Changing the Excel File**: Update the `file_path` variable to point to a different Excel file.
 
+Here's a draft README for your script:
+
+---
+
+# country_check script
+
+This Python script reads data from an Excel file, compares a list of cities against the "Country" column in the dataset, and outputs the results to a text file. The script is useful for identifying records in the dataset that match specific cities.
+
+## Features
+
+- **Excel Data Processing**: Reads data from an Excel file.
+- **City Matching**: Compares a predefined list of cities with the "Country" column in the dataset.
+- **Output**: Generates a text file containing the results of the matching process.
+
+## Prerequisites
+
+- Python 3.x
+- Required Python libraries:
+  - `pandas`
+
+You can install the required library using pip:
+
+```bash
+pip install pandas
+```
+
+## Usage
+
+1. **Prepare the Excel File**: 
+   - Ensure that your Excel file is properly formatted and saved at the specified location. 
+   - The script is currently configured to read from the file path `C:\Users\Pavel\Documents\CV\Sally Test\Для кандидатов - база Aparta.xlsx`. You can change this to your actual file path if needed.
+   - The script assumes the relevant data is in a sheet named `'Full Base'`.
+
+2. **Specify the List of Cities**:
+   - The script comes with a predefined list of cities. You can modify this list within the script if needed.
+
+3. **Run the Script**:
+   - Execute the script using a Python interpreter. 
+   - The script will read the Excel file, perform the matching, and write the results to `result_country.txt`.
+
+4. **Check the Output**:
+   - The output will be saved in the same directory as the script under the filename `result_country.txt`.
+   - The text file will contain the list of matches or indicate if no matches were found for each city.
+
+## Example Output
+
+```text
+Matches for Lima:
+  Company: ABC Corp
+
+City Caracas - no matches
+
+Matches for Tokyo:
+  Company: XYZ Ltd
+  Company: Tokyo Enterprises
+```
+
+## Customization
+
+- **File Path**: You can change the `file_path` variable in the script to point to a different Excel file.
+- **City List**: Update the `country_list` variable with the cities you want to match against the dataset.

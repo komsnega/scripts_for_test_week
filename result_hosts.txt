@@ -1,0 +1,33 @@
+word any - matches:
+  In 'Full Base' (Company, Country):
+    The Spot Company (Mexico)
+    Bachcare, The Holiday Home Company  (Auckland)
+    Bachcare, The Holiday Home Company  (Auckland)
+    Bachcare, The Holiday Home Company  (Auckland)
+    JD Property Management & Cleaning Company (Mosman)
+    Finques Company (Llançà)
+    Finques Company (Llançà)
+    Florida Vacation Rental Company  (Clearwater Beach)
+    Florida Vacation Rental Company  (Clearwater Beach)
+    Company (Country)
+    The Spot Company (Mexico)
+
+word life - matches:
+  In 'Full Base' (Company, Country):
+    The Villa Life (Barbados)
+    The Villa Life (Barbados)
+    Easylife House (Milano)
+    Easylife House (Milano)
+    Easylife House (Milano)
+    COLIFE (دبي)
+    COLIFE (دبي)
+    COLIFE (دبي)
+    COLIFE (دبي)
+    COLIFE (دبي)
+    COLIFE (دبي)
+    COLIFE (دبي)
+    Blife Vacation Rentals  (Faro)
+    Blife Vacation Rentals  (Faro)
+    Hawaii Life (Haleiwa)
+    Hawaii Life (Haleiwa)
+
