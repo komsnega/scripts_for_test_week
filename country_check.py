@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the Excel file (replace 'your_file.xlsx' with your actual file name)
-file_path = r'C:\Users\Pavel\Documents\CV\Sally Test\Для кандидатов - база Aparta.xlsx'
+file_path = r'C:\Users\Pavel\Documents\CV\Sally Test\Для кандидатов - база.xlsx'
 df = pd.read_excel(file_path, sheet_name='Full Base')
 
 # Your list of countries
