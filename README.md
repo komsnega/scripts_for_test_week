@@ -1,6 +1,7 @@
 This README covers scripts:
 - host_names_vs_two_tabs
 - country_check
+- li_porfiles_to_xls
 
 
 ---
@@ -127,3 +128,64 @@ Matches for Tokyo:
 
 - **File Path**: You can change the `file_path` variable in the script to point to a different Excel file.
 - **City List**: Update the `country_list` variable with the cities you want to match against the dataset.
+
+-------
+
+# li_porfiles_to_xls Script
+
+## Overview
+
+This Python script processes a batch of text files, each containing the content of a LinkedIn profile. The script extracts the first name, last name, and position title from each profile and saves the extracted information into an Excel spreadsheet.
+
+## Features
+
+- **Name Extraction**: The script extracts the first name and last name from specific lines in the text file. If the line containing "Background Image" is present, the name is taken from the line immediately following it. If "Background Image" is absent, the name is extracted from the line following the one with the word "Advertise."
+  
+- **Position Title Extraction**: The script identifies the position title from the line following the first occurrence of the word "logo" in the file. It handles repetition in titles by checking if the title appears twice consecutively and removes the duplication.
+  
+- **Numerical File Processing**: Text files are processed in numerical order, starting from `1.txt` and continuing to the highest number. This ensures that profiles are handled sequentially based on the file naming convention.
+
+## Prerequisites
+
+- **Python 3.x**
+- **Pandas**: Install with `pip install pandas`
+- **XlsxWriter**: Install with `pip install XlsxWriter`
+
+## Script Usage
+
+### Folder Structure
+
+The script assumes the following folder structure:
+
+- **LinkedIn Text Files**: A folder containing the text files of LinkedIn profiles (e.g., `1.txt`, `2.txt`, etc.).
+- **Output Folder**: A folder where the generated Excel file will be saved.
+
+### Example Folder Paths
+- LinkedIn Text Files: `C:\Users\Pavel\Documents\CV\Sally Test\li profiles as txts`
+- Output Folder: `C:\Users\Pavel\Documents\CV\Sally Test\scripts_for_test_week`
+
+### Running the Script
+
+1. **Place the text files** in the designated folder.
+2. **Update the `folder_path` and `output_folder` variables** in the script to reflect your folder structure.
+3. **Run the script**: The script will process all text files in numerical order, extract the required information, and save it to an Excel file.
+
+### Output
+
+The output is an Excel file named `linkedin_profiles.xlsx`, saved in the specified output folder. It contains the following columns:
+
+- **Name**: The first name extracted from the profile.
+- **Last Name**: The last name (or any other part of the name following the first word).
+- **Position**: The extracted job title.
+
+### Example Output
+
+| Name | Last Name | Position |
+|------|-----------|----------|
+| Lena | Katz      | Chief Technology Officer |
+| Jia  | Wun       | Senior Special Admin & Operations Manager |
+
+## Customization
+
+- **Change Extraction Logic**: The script can be adjusted to look for different keywords or lines for name and position extraction.
+- **Change Output Format**: You can modify the script to save the output in formats other than Excel, such as CSV.

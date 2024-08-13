@@ -6,7 +6,7 @@ df_tab1 = pd.read_excel(file_path, sheet_name='Full Base')
 df_tab2 = pd.read_excel(file_path, sheet_name='с ними был колл')
 
 # Your list of words
-word_list = ['any', 'life']
+word_list = ['Hooker']
 
 # Initialize an empty result string
 result = ""

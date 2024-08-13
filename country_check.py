@@ -5,36 +5,7 @@ file_path = r'C:\Users\Pavel\Documents\CV\Sally Test\Для кандидатов
 df = pd.read_excel(file_path, sheet_name='Full Base')
 
 # Your list of countries
-country_list = [
-    'Caracas',
-    'Salvador',
-    'Fortaleza',
-    'Guayaquil',
-    'Lima',  # Peru
-    'Bogotá',  # Colombia
-    'Santiago',  # Chile
-    'Buenos Aires',  # Argentina
-    'Cairo',  # Egypt
-    'Mumbai',  # India
-    'Jakarta',  # Indonesia
-    'Bangkok',  # Thailand
-    'Kuala Lumpur',  # Malaysia
-    'Manila',  # Philippines
-    'Lagos',  # Nigeria
-    'Johannesburg',  # South Africa
-    'Nairobi',  # Kenya
-    'Casablanca',  # Morocco
-    'Tehran',  # Iran
-    'Dubai',  # United Arab Emirates
-    'Riyadh',  # Saudi Arabia
-    'Dhaka',  # Bangladesh
-    'Karachi',  # Pakistan
-    'Ho Chi Minh City',  # Vietnam
-    'Seoul',  # South Korea
-    'Tokyo',  # Japan
-    'Beijing',  # China
-    # Add more cities here...
-]
+country_list = ['Toronto', 'Montreal', 'Calgary', 'Ottawa', 'Edmonton', 'Winnipeg', 'Mississauga', 'Vancouver', 'Brampton', 'Hamilton']
 
 # Initialize an empty result string
 result = ""
