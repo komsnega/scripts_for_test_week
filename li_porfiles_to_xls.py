@@ -42,9 +42,33 @@ for filename in txt_files:
             
             # Extract the title after the "logo" line
             elif "logo" in line.lower() and title is None:
-                # Assume the title is on the next line
-                title_line = lines[i + 1].strip()
+                # Get the words before "logo"
+                before_logo_words = line.lower().split("logo")[0].split()
                 
+                # Check if the next line contains only duplicated words or combinations from the previous line
+                next_line = lines[i + 1].strip()
+                next_line_lower = next_line.lower()
+                
+                is_match = False
+                combined_words = ''.join(before_logo_words)
+                
+                # Check for exact match with individual words or combined form
+                if any(next_line_lower == word or next_line_lower == word * 2 for word in before_logo_words):
+                    is_match = True
+                elif next_line_lower == combined_words or next_line_lower == combined_words * 2:
+                    is_match = True
+                
+                if is_match:
+                    # Find the line that contains "yrs" or "mos" and take the title from the next line
+                    for j in range(i + 2, len(lines)):
+                        if "yrs" in lines[j].lower() or "mos" in lines[j].lower():
+                            title_line = lines[j + 1].strip()
+                            break
+                else:
+                    # Otherwise, assume the title is on the next line
+                    title_line = next_line
+                
+                # Ensure we're extracting a proper title and not a duplicate company name
                 # Split title in half to check for repetition
                 half_len = len(title_line) // 2
                 if title_line[:half_len].strip() == title_line[half_len:].strip():
@@ -64,7 +88,7 @@ for filename in txt_files:
 df = pd.DataFrame(data, columns=['Name', 'Last Name', 'Position'])
 
 # Save to Excel in the specified output folder
-output_folder = r'C:\Users\Pavel\Documents\CV\Sally Test\scripts_for_test_week'
+output_folder = r'C:\Users\Pavel\Documents\CV\Sally Test'
 output_file = os.path.join(output_folder, 'linkedin_profiles.xlsx')
 
 # Write to Excel file

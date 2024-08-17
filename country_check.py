@@ -5,7 +5,7 @@ file_path = r'C:\Users\Pavel\Documents\CV\Sally Test\Для кандидатов
 df = pd.read_excel(file_path, sheet_name='Full Base')
 
 # Your list of countries
-country_list = ['Toronto', 'Montreal', 'Calgary', 'Ottawa', 'Edmonton', 'Winnipeg', 'Mississauga', 'Vancouver', 'Brampton', 'Hamilton']
+country_list = ["Loveland", "Longmont", "Colorado"]
 
 # Initialize an empty result string
 result = ""

@@ -2,6 +2,7 @@ This README covers scripts:
 - host_names_vs_two_tabs
 - country_check
 - li_porfiles_to_xls
+- top_50_processing
 
 
 ---
@@ -189,3 +190,20 @@ The output is an Excel file named `linkedin_profiles.xlsx`, saved in the specifi
 
 - **Change Extraction Logic**: The script can be adjusted to look for different keywords or lines for name and position extraction.
 - **Change Output Format**: You can modify the script to save the output in formats other than Excel, such as CSV.
+
+# top_50_processing script
+This Python script processes a list of 50 companies from the text file. It opens the file in reading mode, reads it line by line, creates an empty list for storing company names, and checks each line to see if it starts with a number between 1 and 50. If so, it adds the company name to the list. Finally, it prints out the list of company names.
+
+## Requirements
+- Python 3 or higher
+- A text file containing the list of companies
+
+## Usage
+To use the script, run the following command in the terminal:
+
+```bash
+python path_to_script/script_name.py
+```
+
+## Limitations
+The script only works with lists that contain numbers from 1 to 50 at the beginning of each line.
